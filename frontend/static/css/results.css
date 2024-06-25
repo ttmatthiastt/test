@@ -1,0 +1,74 @@
+/* sets the style for the body of the page */
+body {
+    font-family: Arial Black, sans-serif;
+    background-color: #081F69;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* centers the text on page */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* sets the style for the text */
+.text-section {
+    flex: 1;
+    text-align: center;
+}
+
+/* sets the style for h1 in the body */
+.text-section h1 {
+    font-size: 36px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* style of the buttons */
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    margin: 10px 0;
+    padding: 15px 30px;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* style for when the mouse hovers over a button */
+.button:hover {
+    background-color: #FFFFFF;
+    color: #081F69;
+}
+
+/* sets the location of the home button */
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+/* sets the size of the image of the home button */
+.home-button img {
+    width: 150px; /* Adjust the size as needed */
+}
+
+/* sets the size and style of the waveform placeholder */
+.waveform-placeholder {
+    width: 80%;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin: 20px auto;
+}

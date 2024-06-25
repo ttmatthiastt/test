@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reviews.css') }}">
+
+</head>
+<body>
+    <div class="nav">
+        <a href="{{ url_for('search') }}">SEARCH</a>
+        <a href="{{ url_for('about') }}">ABOUT</a>
+    </div>
+    <a href="{{ url_for('index') }}" class="home-button">
+        <img src="{{ url_for('static', filename='css/logo.png') }}" alt="Home">
+    </a>
+    
+    <div class="container">
+        <div class="title">REVIEWS</div>
+
+        <form class="review-form" action="{{ url_for('create_review') }}" method="post">
+            <label for="title">Name of artist or song:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="content">Review:</label>
+            <textarea id="content" name="content" required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    
+        <div class="submitted-reviews">
+            <div class="search-container">
+                <div class="search-option">
+                    <label for="sort_by">Choose how you want to sort by:</label>
+                    <select id="sort_by" name="sort_by" onchange="sortReviews()">
+                        <option value="alphabetical" {% if request.args.get('sort_by') == 'alphabetical' %}selected{% endif %}>Song alphabetical (default)</option>
+                        <option value="newest" {% if request.args.get('sort_by') == 'newest' %}selected{% endif %}>Newest</option>
+                        <option value="oldest" {% if request.args.get('sort_by') == 'oldest' %}selected{% endif %}>Oldest</option>
+                    </select>
+                </div>
+            </div>
+
+
+            {% for review in reviews %}
+                <div class="review-item">
+                    <h3>{{ review.title }}</h3>
+                    <p>{{ review.content }}</p>
+                    <p class="created-at">{{ review.created_at }}</p>
+                    <button onclick="toggleUpdateForm({{ review.id }})">Change Review</button>
+                    <form id="update-form-{{ review.id }}" class="update-form" action="{{ url_for('update_review') }}" method="post">
+                        <input type="hidden" name="review_id" value="{{ review.id }}">
+                        <input type="text" name="title" value="{{ review.title }}" required>
+                        <textarea name="content" required>{{ review.content }}</textarea>
+                        <button type="submit">Update Review</button>
+                    </form>
+                    <form action="{{ url_for('delete_review') }}" method="post">
+                        <input type="hidden" name="review_id" value="{{ review.id }}">
+                        <button type="submit">Delete Review</button>
+                    </form>
+                </div>
+            {% else %}
+                <p>No reviews yet. Be the first to add one!</p>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <script>
+        function toggleUpdateForm(id) {
+            var form = document.getElementById('update-form-' + id);
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+        function sortReviews() {
+            var sortBy = document.getElementById('sort_by').value;
+            window.location.href = "{{ url_for('reviews') }}?sort_by=" + sortBy;
+        }
+    </script>
+
+</body>
+</html>

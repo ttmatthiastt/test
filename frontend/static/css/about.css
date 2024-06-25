@@ -1,0 +1,64 @@
+/* 
+         this class sets the style the body of page
+        */
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background-image: url('/static/css/backgroundimg.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+        /* 
+         this class sets style of container
+        */
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        /* 
+         this class sets style of header
+        */
+        .header {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        /* 
+         this class sets style of content container
+        */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* 
+         this class sets style of text block 
+        */
+        .text {
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #d9d9d9;
+            text-align: center;
+            padding: 0 20px;
+        }
+        /* 
+         this class sets style of logo button
+        */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        /* 
+         this class sets size of logo img
+        */
+        .home-button img {
+            width: 100px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }

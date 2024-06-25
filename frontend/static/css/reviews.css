@@ -1,0 +1,139 @@
+/* style for the body of the page */
+body {
+    font-family: Arial Black, sans-serif;
+    background-image: url(bg-img-reviews.jpg);
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 100vh;
+    overflow: auto; 
+}
+
+/* sets the location of the home button */
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+/* sets the size of the image of the home button */
+.home-button img {
+    width: 150px; 
+}
+
+/* sets the location of the navigation bar to go to other pages */
+.nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 20px;
+}
+
+/* styles the navigation bar, e.g. distance from other options */
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+/* styles the title element */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* sets the location of the review input form */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* styles the label before the text area */
+.review-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* styles the input area of the name of what is being reviewed */
+.review-form input[type="text"], .review-form textarea {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    height: 20px;
+}
+
+/* styles the submit button */
+.review-form button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* styles the section for displaying submitted reviews */
+.submitted-reviews {
+    width: 100%;
+    max-height: 50vh; /* Limits the height of the review section */
+    overflow-y: auto; /* Adds a scrollbar if reviews exceed the height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-item {
+    background-color: #333333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 300px; /* Make sure the reviews take the same width as the form */
+
+}
+
+.review-item h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.review-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+/* Container for search options */
+.search-container {
+    margin-bottom: 20px;
+}
+
+/* Styling individual search options */
+.search-option {
+    margin-bottom: 10px;
+}
+.update-form {
+    display: none;
+}
+.update-form input[type="text"],
+.update-form textarea {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5501/static/css/results.css">
+</head>
+<body>
+    <a href="{{url_for('index')}}l" class="home-button">
+        <img src="{{url_for('static', filename='css/logo.png')}}g" alt="Home">
+    </a>
+    <div class="container">
+        <div class="waveform-placeholder"></div> <!-- acts as a placeholder for where the image of the song and preview will go -->
+        <div class="text-section">
+            <h1>SAVE THE SONG TO YOUR FAVOURITES</h1>
+            <div class="buttons">
+                <a href="#" class="button">ADD TO FAVOURITES</a> <!-- will allow the user to add the song their favorites -->
+                <a href="#" class="button">SEE ON SPOTIFY</a> <!-- leads the user to a spotify link of the song -->
+                <a href="#" class="button">ADD TO PLAYLIST</a> <!-- allows the user to add the song to one of their playlists on spotify -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

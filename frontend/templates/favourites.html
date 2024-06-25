@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/favourites.css')}}"> <!-- Adjusted path to CSS file -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/favourites.css')}}"> <!-- Adjusted path to CSS file -->
+</head>
+<body>
+    <a href="{{url_for('index')}}" class="home-button">
+        <img src="{{url_for('static', filename='css/logo.png')}}" alt="Home">
+    </a>
+    <div class="header">
+        <h1>FAVOURITES</h1>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h2>Artists</h2>
+            <div class="search-container">
+                <div class="search-option">
+                    <label for="searchTypeArtist">Choose how you want to sort by</label>
+                    <select id="searchTypeArtist" name="searchType">
+                        <option value="artist">RECENTLY ADDED</option>
+                        <option value="genre">ALPHABETICAL</option>
+                        <option value="song">GENRE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="name">#</div>
+            <a href="#">
+                <img src="#"
+                    alt="#" class="artist_picture">
+            </a>
+            <div class="name">#</div>
+            <a href="#">
+                <img src="#"
+                    alt="#" class="artist_picture">
+            </a>
+        </div>
+
+        <div class="column">
+            <h2>Albums</h2>
+            <div class="search-container">
+                <div class="search-option">
+                    <label for="searchTypeAlbums">Choose how you want to sort by</label>
+                    <select id="searchTypeAlbums" name="searchType">
+                        <option value="artist">RECENTLY ADDED</option>
+                        <option value="genre">ALPHABETICAL</option>
+                        <option value="song">GENRE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="album_name">#</div>
+            <div class="album_artist">#</div>
+            <a href="#">
+                <img src="#"
+                    alt="#" class="album_picture">
+            </a>
+
+            <div class="album_name">#</div>
+            <div class="album_artist">#</div>
+            <a href="#">
+                <img src="#"
+                    alt="#" class="album_picture">
+            </a>
+        </div>
+
+        <div class="column">
+            <h2>Songs</h2>
+            <div class="search-container">
+                <div class="search-option">
+                    <label for="searchTypeSongs">Choose how you want to sort by</label>
+                    <select id="searchTypeSongs" name="searchType">
+                        <option value="artist">RECENTLY ADDED</option>
+                        <option value="genre">ALPHABETICAL</option>
+                        <option value="song">GENRE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="song">Mess around</div>
+            <div class="song_artist">Ray Charles</div>
+            <div class="song">Les</div>
+            <div class="song_artist">Childish Gambino</div>
+            <div class="song">Runaway</div>
+            <div class="song_artist">Kanye West</div>
+            <div class="song">Eventually</div>
+            <div class="song_artist">Tame Impala</div>
+        </div>
+    </div>
+</body>
+</html>

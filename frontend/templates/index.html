@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Finder</title>
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+</head>
+<body>
+    <div class="background-shapes">
+        <img src="{{url_for('static', filename='css/background.jpg')}}" alt="background">
+    </div>
+    
+    <div class="container">
+        <div class="nav">
+            <a href="{{url_for('about')}}">ABOUT</a>
+            <a href="{{url_for('reviews')}}">REVIEWS</a>
+        </div>
+        
+        <img src="{{url_for('static', filename='css/logo.png')}}" alt="Music Finder Logo" class="logo">
+        
+        <a href="{{url_for('search')}}" class="button">FIND NEW MUSIC</a>
+    </div>
+</body>
+</html>
+

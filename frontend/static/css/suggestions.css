@@ -1,0 +1,116 @@
+/* 
+ this class sets the style the body of page
+*/
+body {
+    font-family: 'Arial Black', sans-serif;
+    background-image: url('9580633.jpg');
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+/* 
+ this class sets style of container
+*/
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* 
+ this class sets style of title
+*/
+.title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+/* 
+ this class sets style of the subtitle
+*/
+.subtitle {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}
+/* 
+ this class sets style of bunch of suggestions
+*/
+.suggestions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/* 
+ this class sets style of items of suggestions
+*/
+.suggestion {
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+/* 
+ this class sets style of images in suggestion boxes
+*/
+.suggestion img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+/* 
+ this class sets hovering style to the images in suggestion boxes
+*/
+.suggestion:hover img {
+    transform: scale(1.05);
+    border-color: #FF5733;
+}
+/* 
+ this class sets style of p items from suggestion items
+*/
+.suggestion p {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+@media (max-width: 768px) {
+    .suggestion {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .suggestion {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+/* 
+ this class sets position of home button
+*/
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+/* 
+ this class sets size of logo img
+*/
+.home-button img {
+    width: 100px;
+}
+
+.go-back-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Green background */
+    color: rgb(118, 11, 206); /* White text */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.go-back-button:hover {
+    background-color: #d9b2fd; /* Darker green on hover */
+}

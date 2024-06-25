@@ -1,0 +1,124 @@
+/* Basic styling for the body */
+body {
+    margin: 0;
+    font-family: Arial black, sans-serif;
+    background-color: #3b36cc;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Styling for the header section */
+.header {
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Container for the main content */
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* Styling for each column */
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 15%;
+}
+
+/* Header styling */
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+/* Sub-header styling */
+h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Name of artist in artist column  */
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Styling for artist pictures */
+.artist_picture {
+    width: 150px;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Styling for album pictures */
+.album_picture {
+    width: 150px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+/* Styling for album name */
+.album_name {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the artist that performs the album */
+.album_artist {
+    font-size: 14px;
+    margin: 6px;
+}
+
+/* Styling for songs */
+.song {
+    font-size: 24px;
+    margin: 20px;
+}
+
+/* Styling for the artist that performs the song */
+.song_artist {
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* Positioning of the home button  */
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+}
+
+/* Styling of the home button */
+.home-button img {
+    width: 150px;
+}
+
+/* Container for search options */
+.search-container {
+    margin-bottom: 20px;
+}
+
+/* Styling individual search options */
+.search-option {
+    margin-bottom: 10px;
+}

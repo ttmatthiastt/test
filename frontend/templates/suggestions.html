@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Suggestions</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/suggestions.css')}}"s">
+</head>
+<body>
+    <a href="{{ url_for('index') }}" class="home-button">
+        <img src="{{ url_for('static', filename='css/logo.png') }}" alt="Home">
+    </a>
+    <div class="container">
+        <div class="title">SUGGESTIONS</div>
+        <div class="subtitle">FOR THE ARTIST "{{ query }}"</div>
+        <div class="suggestions">
+            {% if suggestions %}
+                {% for suggestion in suggestions %}
+                <div class="suggestion">
+                    <a href="{{ suggestion['external_url'] }}" target="_blank">
+                        <img src="{{ suggestion['image_url'] }}" alt="{{ suggestion['name'] }}">
+                    </a>
+                    <p>{{ suggestion['name'] }} - {{ suggestion['artist_name'] }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No suggestions found.</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('search') }}" class="go-back-button">Go Back</a>
+    </div>
+</body>
+</html>

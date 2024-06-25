@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Review</title>
+</head>
+<body>
+    <h1>Update a Review</h1>
+    <form action="/update_review" method="POST">
+        <label for="review_id">Review ID:</label>
+        <input type="text" id="review_id" name="review_id" required><br><br>
+        <label for="title">New Title:</label>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="content">New Content:</label>
+        <textarea id="content" name="content"></textarea><br><br>
+        <button type="submit">Update Review</button>
+    </form>
+</body>
+</html>

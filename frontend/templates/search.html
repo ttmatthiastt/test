@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Music</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+    <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+    <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('about')}}">ABOUT</a>
+        <a href="{{url_for('reviews')}}">REVIEWS</a>
+    </div>
+    <a href="{{url_for('index')}}" class="home-button">
+        <img src="{{url_for('static', filename='css/logo.png')}}" alt="Home">
+    </a>
+    <div class="container">
+        <div class="title">SEARCH HERE</div>
+        <div class="subtitle">SEARCH BY ... </div>
+        <div class="search-container">
+            <div class="search-option">
+                <label for="searchTypeArtist"> </label>
+                <select id="searchTypeArtist" name="searchType">
+                    <option value="artist">SONG</option>
+                    <option value="genre">ARTIST</option>
+                    <option value="song">ALBUM</option>
+                </select>
+            </div>
+        </div>
+        <form id="searchForm" onsubmit="submitSearch(); return false;">
+            <div class="search-box">
+                <input type="text" id="query" name="query" placeholder="Search...">
+                <button type="submit">&#x1F50D;</button>
+            </div>
+            <div class="slider-container">
+                <div class="slider-label">
+                    <span>HOW POPULAR YOU WANT THE SUGGESTIONS TO BE... </span>
+                    <span>0 - 100</span>
+                </div>
+                <input type="range" min="0" max="100" value="50" class="slider" id="popularityRange" name="popularity">
+                <span class="slider-value" id="sliderValue">50</span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        async function submitSearch() {
+            const query = document.getElementById('query').value;
+            const popularity = document.getElementById('popularityRange').value;
+
+            console.log(`Submitting search: query=${query}, popularity=${popularity}`);
+            if (!query) {
+                alert('Please enter a song name to search.');
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5001/recommendations?song_name=${query}&popularity=${popularity}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const recommendations = await response.json();
+                console.log('Received recommendations:', recommendations);
+
+                // Redirect to suggestions page with query parameters
+                window.location.href = `/suggestions?query=${query}&popularity=${popularity}`;
+            } catch (error) {
+                console.error('Error fetching recommendations:', error);
+                alert('Error fetching recommendations. Please try again later.');
+            }
+        }
+    </script>
+</body>
+</html>
